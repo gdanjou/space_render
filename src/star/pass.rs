@@ -244,7 +244,10 @@ fn build_custom_pipeline<B: Backend>(
                     fun: pso::Comparison::Less,
                     write: true,
                 })
-                .with_blend_targets(vec![pso::ColorBlendDesc{pso::ColorMask::ALL, pso::BlendState::ALPHA}]),
+                .with_blend_targets(vec![pso::ColorBlendDesc {
+                    mask: pso::ColorMask::ALL,
+                    blend: Some(pso::BlendState::ALPHA),
+                }]),
         )
         .build(factory, None);
 
