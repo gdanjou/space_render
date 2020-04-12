@@ -46,14 +46,14 @@ const STATIC_INSTANCE_DATA: [u32; 6] = [0, 1, 2, 0, 3, 2];
 lazy_static::lazy_static! {
     // These uses the precompiled shaders.
     // These can be obtained using glslc.exe in the vulkan sdk.
-    static ref VERTEX: SpirvShader = SpirvShader::new(
-        include_bytes!("../../shaders/spirv/atmosphere.vert.spv").to_vec(),
+    static ref VERTEX: SpirvShader = SpirvShader::from_bytes(
+        include_bytes!("../../shaders/spirv/atmosphere.vert.spv"),
         ShaderStageFlags::VERTEX,
         "main",
     );
 
-    static ref FRAGMENT: SpirvShader = SpirvShader::new(
-        include_bytes!("../../shaders/spirv/atmosphere.frag.spv").to_vec(),
+    static ref FRAGMENT: SpirvShader = SpirvShader::from_bytes(
+        include_bytes!("../../shaders/spirv/atmosphere.frag.spv"),
         ShaderStageFlags::FRAGMENT,
         "main",
     );
