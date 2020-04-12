@@ -19,7 +19,7 @@ metal = ["amethyst/metal"]
 empty = ["amethyst/empty"]
 
 [dependencies]
-amethyst="0.13.2"
+amethyst="0.15.0"
 rand = "0.7.2"
 lazy_static = "1.4.0"
 failure = "0.1.6"
