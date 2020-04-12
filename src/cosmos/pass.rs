@@ -58,13 +58,13 @@ lazy_static::lazy_static! {
         include_bytes!("../../shaders/spirv/star_point.vert.spv"),
         ShaderStageFlags::VERTEX,
         "main",
-    );
+    ).unwrap();
 
     static ref FRAGMENT: SpirvShader = SpirvShader::from_bytes(
         include_bytes!("../../shaders/spirv/star_point.frag.spv"),
         ShaderStageFlags::FRAGMENT,
         "main",
-    );
+    ).unwrap();
 }
 
 /// Draw triangles.
